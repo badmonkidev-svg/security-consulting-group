@@ -1,113 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCG | Home</title>
-  <style>
-    :root {
-      --navy: #1c2940;
-      --gold: #e5a91b;
-      --gold-dark: #bd8610;
-      --paper: #fff;
-      --muted: #666;
-      --line: #e7e3da;
-      --max: 1160px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
-    body {
-      background: linear-gradient(135deg, #fff9e6 0%, #fef0b8 30%, #fde066 70%, #f9d342 100%);
-      min-height: 100vh;
-      color: #202020;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    .top-strip { height: 7px; background: var(--gold); }
-    header { background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
-    .nav-wrap {
-      max-width: var(--max); margin: 0 auto; padding: 15px 24px;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
-    }
-    .brand img { width: 180px; height: auto; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 28px; list-style: none; }
-    .nav-links a {
-      color: var(--navy); font-size: .9rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: .06em; padding: 6px 4px;
-      border-bottom: 3px solid transparent;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--gold-dark); border-bottom-color: var(--gold);
-    }
-    section { max-width: var(--max); margin: 0 auto; padding: 60px 24px; min-height: 70vh; }
-    h1 { font-size: clamp(2rem, 5vw, 3.8rem); text-transform: uppercase; color: var(--navy); line-height: 1.1; }
-    h1 span { color: var(--gold-dark); }
-    h2 { font-size: 2rem; text-transform: uppercase; color: var(--navy); margin-bottom: 25px; }
-    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-top: 40px; }
-    .hero-img { box-shadow: 8px 8px 0 var(--gold); }
-    p { font-size: 1.05rem; line-height: 1.7; color: #444; margin-bottom: 20px; }
-    .btn {
-      display: inline-block; background: var(--gold); color: #111; font-weight: 800;
-      text-transform: uppercase; letter-spacing: .08em; padding: 14px 28px; border: none;
-      transition: .25s;
-    }
-    .btn:hover { background: var(--navy); color: white; }
-    .stats {
-      background: var(--navy); color: white; padding: 30px 24px; margin-top: 60px;
-    }
-    .stats-inner {
-      max-width: var(--max); margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center;
-    }
-    .stats strong { display: block; font-size: 2rem; color: var(--gold); }
-    footer { background: var(--navy); color: white; text-align: center; padding: 30px; margin-top: 40px; }
-    footer strong { color: var(--gold); }
-    @media (max-width: 820px) {
-      .hero { grid-template-columns: 1fr; }
-      .nav-links { gap: 15px; margin-top: 10px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="top-strip"></div>
-  <header>
-    <div class="nav-wrap">
-      <a class="brand" href="index.html"><img src="images/scg_logo_wordmark.png" alt="SCG"></a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="industries.html">Industries</a></li>
-        <li><a href="why-scg.html">Why SCG</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </header>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCG | Home</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="top-strip"></div><header><div class="nav-wrap">
+<a class="brand" href="index.html"><img src="images/scg_logo_wordmark.png" alt="Security Consulting Group logo"></a>
+<ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="why-scg.html">Why SCG</a></li><li><a href="contact.html">Contact</a></li></ul></div></header>
 
-  <section>
-    <div class="hero">
-      <div>
-        <h1>Reliable <span>Security</span> Solutions</h1>
-        <p>Your trusted security partner since 1992. Professional security officers, patrol services, consulting, and technology-enabled protection solutions across California.</p>
-        <a href="contact.html" class="btn">Contact Our Team</a>
-      </div>
-      <div class="hero-img">
-        <img src="images/page_01-cover_security_team.jpg" alt="SCG Security Team">
-      </div>
-    </div>
-  </section>
+<section><div class="hero"><div>
+<h1>Reliable <span>Security</span> Solutions</h1>
+<p>Your trusted security partner since 1992. Professional security officers, patrol services, consulting, and technology-enabled protection solutions across California.</p>
+<a href="contact.html" class="btn">Contact Our Team</a></div>
+<div class="hero-img"><img src="images/page_01_cover_security_team.jpeg" alt="Security team"></div></div></section>
+<div class="stats"><div class="stats-inner"><div><strong>1992</strong>Established</div><div><strong>2,421</strong>Happy Clients</div><div><strong>500+</strong>Professionals</div><div><strong>24/7</strong>Available</div></div></div>
 
-  <div class="stats">
-    <div class="stats-inner">
-      <div><strong>1992</strong>Established</div>
-      <div><strong>2,421</strong>Happy Clients</div>
-      <div><strong>500+</strong>Professionals</div>
-      <div><strong>24/7</strong>Available</div>
-    </div>
-  </div>
-
-  <footer>
-    <strong>SECURITY CONSULTING GROUP</strong><br>
-    Reliable Security Solutions · PPO#119767<br>
-    © 2026 Security Consulting Group
-  </footer>
-</body>
-</html>
+<footer><strong>SECURITY CONSULTING GROUP</strong><br>Reliable Security Solutions · PPO#119767<br>© 2026 Security Consulting Group</footer>
+</body></html>
