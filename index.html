@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Consulting Group | Reliable Security Solutions Since 1992</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+            --primary: #1a365d;
+            --secondary: #c9a227;
+            --accent: #2c5282;
+            --light: #f7f9fc;
+            --dark: #1f2937;
+            --text: #374151;
+        }
+        body {
+            line-height: 1.6;
+            color: var(--text);
+        }
+        nav {
+            background: var(--primary);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.9rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        .stats {
+            background: white;
+            padding: 3rem 5%;
+            margin-top: -50px;
+            position: relative;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-label {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #6b7280;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .benefits-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .benefits-list li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .benefits-list li:before {
+            content: "✓ ";
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .industry-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .why-scg {
+            background: var(--light);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .why-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .contact-info p {
+            margin-bottom: 0.8rem;
+        }
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .stats-container, .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">SCG</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#why">Why SCG</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Home / Hero Section -->
+<section class="hero" id="home">
+    <h1>Security Consulting Group</h1>
+    <p>Your Trusted Security Partner — Professional Security Solutions Since 1992</p>
+    <p>24/7 Protection in Los Angeles, Simi Valley, Sacramento, and Beyond</p>
+    <a href="#contact" class="cta-button">Request a Quote</a>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats">
+    <div class="stats-container">
+        <div>
+            <div class="stat-number">32+</div>
+            <div class="stat-label">Years of Service</div>
+        </div>
+        <div>
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Professionals</div>
+        </div>
+        <div>
+            <div class="stat-number">2,421</div>
+            <div class="stat-label">Satisfied Clients</div>
+        </div>
+        <div>
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Always Available</div>
+        </div>
+    </div>
+</div>
+
+<!-- About Us -->
+<section id="about">
+    <h2 class="section-title">About Security Consulting Group</h2>
+    <p class="section-subtitle">Elite security services — protecting what matters most since 1992</p>
+    
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Who We Are</h3>
+            <p>Security Consulting Group is an elite security group specialized in identifying potential risks for high-profile clients. Our company provides security and patrol officers qualified for day-to-day protection offerings.</p>
+            <p>We provide high-quality, professional security services to all clients, employees, patrons, and community members who visit or live at the sites we guard. We embrace our role of providing public safety along with protecting our clients' assets.</p>
+        </div>
+        <div class="about-text">
+            <h3>Our Mission</h3>
+            <p>It is our goal to develop trusted business partnerships with our clients by providing technology-enabled solutions. With years of experience in providing security systems and guard services, we ensure to fulfill our responsibility to protect our clients from immediate, present, and future dangers.</p>
+            <p><strong>Security Consulting Group — Ready to Serve You.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" style="background: var(--light);">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Comprehensive security solutions — tailored to your unique needs</p>
+    
+    <div class="services-grid">
+        <!-- Security Consulting -->
+        <div class="service-card">
+            <h3>📋 Security Consulting</h3>
+            <p>Planning and installing an updated security system doesn't have to be complicated. With decades of experience designing security systems across California, we assess your personal security needs and propose effective, practical solutions.</p>
+            <p>From upgrading existing systems to designing new ones from scratch — our engineers guide you every step of the way.</p>
+        </div>
+
+        <!-- Camera Systems -->
+        <div class="service-card">
+            <h3>📷 Camera Systems & Installation</h3>
+            <p>Modern camera systems let you monitor who enters and exits your property while deterring criminal activity. We offer state-of-the-art systems and professional installation for projects of all sizes.</p>
+            <ul class="benefits-list">
+                <li>Protect property and valuables</li>
+                <li>Deter criminal activity</li>
+                <li>Remote viewing from anywhere</li>
+                <li>Lower insurance premiums</li>
+            </ul>
+        </div>
+
+        <!-- Alarm Systems -->
+        <div class="service-card">
+            <h3>🔔 Alarm Systems & Installation</h3>
+            <p>An up-to-date alarm system is your first line of defense. Modern systems deter burglars and alert authorities instantly. We design and install custom solutions using licensed professional crews.</p>
+            <ul class="benefits-list">
+                <li>24/7 monitoring & alerts</li>
+                <li>Remote access & control</li>
+                <li>Fire & gas detection</li>
+                <li>Custom design for your property</li>
+            </ul>
+        </div>
+
+        <!-- Fire Watch & Safety -->
+        <div class="service-card">
+            <h3>🔥 Fire Watch & Safety Services</h3>
+            <p>Certified safety services including fire prevention, first aid, evacuation assistance, and emergency planning. Our officers perform a variety of additional safety services:</p>
+            <ul class="benefits-list">
+                <li>Fire prevention & firefighting training</li>
+                <li>Evacuation assistance & exercises</li>
+                <li>Workplace & traffic safety</li>
+                <li>Emergency planning & crisis management</li>
+            </ul>
+        </div>
+
+        <!-- Marked Vehicle Patrol -->
+        <div class="service-card">
+            <h3>🚓 Marked Vehicle Patrol</h3>
+            <p>With over 24 years of experience, we're one of California's largest security patrol companies. Our 24/7 dispatch provides immediate response — average response time 30 minutes or less.</p>
+            <p>Patrol service is a cost-effective crime deterrent that protects your property against vandalism and theft. Each client receives personalized attention and qualified officers.</p>
+        </div>
+
+        <!-- Virtual Security -->
+        <div class="service-card">
+            <h3>💻 Virtual Security</h3>
+            <p>Ensure safety at a fraction of the cost — combining smart cameras, AI analytics, and a remote monitoring center. Virtual security actively adapts to emerging threats and cuts overhead significantly.</p>
+            <ul class="benefits-list">
+                <li>Monitor multiple areas simultaneously, 24/7</li>
+                <li>Instant response to criminal activity</li>
+                <li>Professionally trained monitoring personnel</li>
+                <li>Significant cost savings vs. full-time guards</li>
+            </ul>
+        </div>
+
+        <!-- On-Site Uniformed Officers -->
+        <div class="service-card">
+            <h3>👮 On-Site Uniformed Officers</h3>
+            <p>Our armed and unarmed security officers provide immediate visible protection for properties of all sizes. Every guard undergoes rigorous training and holds certifications in CPR/First Aid, Baton, Pepper Spray, Firearms, and Power to Arrest.</p>
+            <p>Officers monitor entrances, check credentials, respond to emergencies, and secure your premises around the clock.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Industries Served -->
+<section id="industries">
+    <h2 class="section-title">Industries We Serve</h2>
+    <p class="section-subtitle">Specialized security solutions for every sector</p>
+    
+    <div class="industries-grid">
+        <div class="industry-item">🏢 Construction Site Security</div>
+        <div class="industry-item">🏬 Business Park Security</div>
+        <div class="industry-item">🛍️ Shopping Center Security</div>
+        <div class="industry-item">🏥 Healthcare Facilities</div>
+        <div class="industry-item">🏨 Hotel & Motel Security</div>
+        <div class="industry-item">🏘️ Apartments & HOA</div>
+        <div class="industry-item">🎓 Educational & Institutional
