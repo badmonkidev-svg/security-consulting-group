@@ -1,405 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Consulting Group | Reliable Security Solutions Since 1992</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        :root {
-            --primary: #1a365d;
-            --secondary: #c9a227;
-            --accent: #2c5282;
-            --light: #f7f9fc;
-            --dark: #1f2937;
-            --text: #374151;
-        }
-        body {
-            line-height: 1.6;
-            color: var(--text);
-        }
-        nav {
-            background: var(--primary);
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: white;
-            padding: 4rem 5% 6rem;
-            text-align: center;
-        }
-        .hero-banner {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            width: 100%;
-            height: auto;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 0.9rem 2.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid var(--secondary);
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(201, 162, 39, 0.4);
-        }
-        .stats {
-            background: white;
-            padding: 3rem 5%;
-            margin-top: -50px;
-            position: relative;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        .stat-label {
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-        section {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        .section-subtitle {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            color: #6b7280;
-        }
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-        .about-image {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .about-text h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            padding: 0;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--secondary);
-            overflow: hidden;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.15);
-        }
-        .service-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .service-content {
-            padding: 1.5rem;
-        }
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        .benefits-list {
-            list-style: none;
-            margin-top: 1rem;
-        }
-        .benefits-list li {
-            padding: 0.4rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .benefits-list li:before {
-            content: "✓ ";
-            color: var(--secondary);
-            font-weight: bold;
-        }
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .industry-item {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 6px;
-            text-align: center;
-            font-weight: 500;
-            transition: background 0.3s, border-left 0.3s;
-            border-left: 4px solid transparent;
-        }
-        .industry-item:hover {
-            background: #fff9e6;
-            border-left-color: var(--secondary);
-        }
-        .why-scg {
-            background: var(--light);
-        }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        .why-item h3 {
-            color: var(--secondary);
-            margin-bottom: 0.8rem;
-        }
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        .contact-info h3 {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem 5%;
-            font-size: 0.9rem;
-            border-top: 3px solid var(--secondary);
-        }
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .stats-container, .about-content, .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Security Consulting Group — reliable security solutions, security officers, patrol, consulting and security systems.">
+  <title>Security Consulting Group | Reliable Security Solutions</title>
+  <style>
+    :root {
+      --ink: #202020;
+      --navy: #1c2940;
+      --gold: #e5a91b;
+      --gold-dark: #bd8610;
+      --paper: #fff;
+      --soft: #f5f5f3;
+      --muted: #666;
+      --line: #e7e3da;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .top-strip { height: 7px; background: var(--gold); }
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 50;
+    }
+    .nav-wrap {
+      max-width: var(--max); margin: auto; padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .brand img { width: 205px; max-height: 62px; object-fit: contain; object-position: left center; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: #333; font-size: .82rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .hero {
+      max-width: var(--max); margin: 0 auto; padding: 38px 24px 48px;
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 42px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-block; color: #222; font-size: .76rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .16em; border-left: 5px solid var(--gold);
+      padding: 4px 0 4px 12px; margin-bottom: 17px;
+    }
+    h1 { font-size: clamp(2.2rem, 4.8vw, 4.15rem); line-height: 1.04; text-transform: uppercase; }
+    h1 span { color: var(--gold-dark); }
+    .hero-copy p { margin: 20px 0 24px; color: #555; max-width: 560px; }
+    .hero-photo-frame { padding: 0 0 12px 12px; background: var(--gold); }
+    .hero-photo { width: 100%; height: 365px; object-fit: cover; }
+    .button {
+      display: inline-block; background: var(--gold); color: #171717;
+      text-decoration: none; font-size: .83rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .06em; padding: 13px 21px;
+      border: 1px solid var(--gold); transition: .2s;
+    }
+    .button:hover { background: #fff; }
+    .catalog-meta {
+      background: var(--navy); color: white; padding: 18px 24px;
+    }
+    .meta-inner {
+      max-width: var(--max); margin: auto; display: flex; justify-content: space-between;
+      gap: 18px; flex-wrap: wrap; align-items: center;
+    }
+    .meta-inner strong { color: var(--gold); font-size: 1.3rem; }
+    .meta-item { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+    .section { max-width: var(--max); margin: auto; padding: 68px 24px; }
+    .section-heading { margin-bottom: 30px; }
+    .section-heading .eyebrow { margin-bottom: 9px; }
+    h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; text-transform: uppercase; }
+    .section-heading p { max-width: 700px; color: var(--muted); margin-top: 12px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: start; }
+    .about-photo { width: 100%; height: 310px; object-fit: cover; border-bottom: 7px solid var(--gold); }
+    .about-copy h3 { font-size: 1.15rem; text-transform: uppercase; margin: 18px 0 8px; }
+    .about-copy p { color: #555; margin-bottom: 12px; }
+    .catalog-section { background: var(--soft); }
+    .service-grid {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px;
+    }
+    .service-card {
+      background: white; border: 1px solid #e9e6df; border-top: 5px solid var(--gold);
+      box-shadow: 0 5px 18px rgba(0,0,0,.045); overflow: hidden;
+    }
+    .service-card img { width: 100%; height: 245px; object-fit: cover; }
+    .service-copy { padding: 22px 24px 25px; }
+    .service-copy h3 { font-size: 1.18rem; text-transform: uppercase; line-height: 1.25; margin-bottom: 12px; }
+    .service-copy p { color: #555; margin: 0 0 11px; font-size: .94rem; }
+    .service-copy ul { margin: 12px 0 0 18px; color: #555; font-size: .91rem; }
+    .service-copy li { padding: 3px 0; }
+    .service-copy li::marker { color: var(--gold-dark); }
+    .full-width-card { grid-column: 1 / -1; display: grid; grid-template-columns: .95fr 1.05fr; }
+    .full-width-card img { height: 100%; min-height: 310px; }
+    .industries { background: #fff; }
+    .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .industry {
+      background: var(--soft); border-left: 4px solid var(--gold);
+      padding: 18px 15px; font-weight: 700; text-align: center; font-size: .9rem;
+    }
+    .why { background: var(--navy); color: white; }
+    .why .section-heading p { color: #d8dbe1; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .why-item { border-top: 3px solid var(--gold); padding-top: 16px; }
+    .why-item h3 { color: var(--gold); font-size: 1rem; text-transform: uppercase; margin-bottom: 8px; }
+    .why-item p { color: #e0e2e6; font-size: .9rem; }
+    .contact { background: var(--soft); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+    .contact-panel { background: white; padding: 26px; border-top: 5px solid var(--gold); }
+    .contact-panel h3 { text-transform: uppercase; margin-bottom: 14px; }
+    .contact-line { margin: 12px 0; color: #444; overflow-wrap: anywhere; }
+    .contact-line strong { display: block; color: #111; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-panel a { color: #71500a; }
+    footer { background: #181818; color: #ddd; text-align: center; padding: 24px; font-size: .82rem; }
+    footer strong { color: var(--gold); }
+    .page-number { display: flex; align-items: center; gap: 12px; margin-top: 28px; color: #777; font-size: .72rem; text-transform: uppercase; }
+    .page-number::before { content: ""; width: 44px; height: 5px; background: var(--gold); }
+    @media (max-width: 820px) {
+      .nav-wrap { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px 16px; }
+      .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-photo { height: 300px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .full-width-card { grid-column: auto; grid-template-columns: 1fr; }
+      .full-width-card img { min-height: 0; height: 245px; }
+      .industry-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .nav-wrap { padding: 12px 17px; }
+      .section, .hero { padding-left: 17px; padding-right: 17px; }
+      .hero { padding-top: 28px; }
+      .industry-grid, .why-grid { grid-template-columns: 1fr; }
+      .meta-inner { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
+  <div class="top-strip"></div>
+  <header class="site-header">
+    <nav class="nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="#home"><img src="images/scg_logo_wordmark.png" alt="Security Consulting Group"></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li><li><a href="#industries">Industries</a></li>
+        <li><a href="#why">Why SCG</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Navigation -->
-<nav>
-    <div class="nav-container">
-        <div class="logo">
-            <img src="images/scg_logo_wordmark.png" alt="Security Consulting Group">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#industries">Industries</a></li>
-            <li><a href="#why">Why SCG</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">Catalog 2026 · Since 1992</span>
+        <h1>Reliable <span>Security</span> Solutions</h1>
+        <p>Your trusted security partner. Security Consulting Group provides professional security services, patrol officers, consulting, and technology-enabled protection solutions.</p>
+        <a class="button" href="#contact">Contact Our Team</a>
+      </div>
+      <div class="hero-photo-frame">
+        <img class="hero-photo" src="images/page_01_cover_security_team.jpeg" alt="Security Consulting Group professional team">
+      </div>
+    </section>
+
+    <div class="catalog-meta">
+      <div class="meta-inner">
+        <div class="meta-item"><strong>1992</strong><br>Since</div>
+        <div class="meta-item"><strong>2,421</strong><br>Clients (catalog figure)</div>
+        <div class="meta-item"><strong>500+</strong><br>Professionals (catalog figure)</div>
+        <div class="meta-item"><strong>24/7</strong><br>Operations</div>
+      </div>
     </div>
-</nav>
 
-<!-- Home / Hero Section -->
-<section class="hero" id="home">
-    <img src="images/page_01-cover_security_team.jpg" alt="Our Professional Security Team" class="hero-banner">
-    <h1>Welcome to Security Consulting Group</h1>
-    <p>Your Trusted Security Partner — Professional Security Solutions Since 1992</p>
-    <p>24/7 Protection in Los Angeles, Simi Valley, Sacramento, and Beyond</p>
-    <a href="#contact" class="cta-button">Request a Quote</a>
-</section>
+    <section class="section" id="about">
+      <div class="section-heading">
+        <span class="eyebrow">About Us</span>
+        <h2>Your Trusted Security Partner</h2>
+        <p>Security Consulting Group — professional security solutions for clients, employees, patrons, and communities.</p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <img class="about-photo" src="images/page_04_security_consulting_team.jpeg" alt="Security consulting team">
+          <div class="about-copy">
+            <h3>About Security Consulting Group</h3>
+            <p>Security Consulting Group is an elite security group specialized in identifying potential risks for high-profile clients. The company can provide security and patrol officers qualified for day-to-day protection offerings.</p>
+            <p>SCG provides professional security services to clients, employees, patrons, and community members who visit or live at the sites it guards. The group embraces its role in providing public safety while protecting clients’ assets.</p>
+          </div>
+        </div>
+        <div class="about-copy">
+          <img class="about-photo" src="images/page_12_security_officers_on_site.jpeg" alt="Uniformed security officers on site">
+          <h3>SCG’s Distinction</h3>
+          <p>SCG aims to develop trusted business partnerships by providing technology-enabled solutions. With experience in security systems and guard services, the company works to protect clients from immediate, present, and future dangers.</p>
+          <p><strong>Ambassadors of Protection:</strong> The catalog describes guards as trained professionals with certifications in CPR/First Aid, Baton, Pepper Spray, Firearms, and Power to Arrest.</p>
+          <p><strong>Total Peace of Mind:</strong> Officers are presented as prepared to address site-specific security requirements and respond to emergencies.</p>
+        </div>
+      </div>
+      <div class="page-number">Catalog pages 1–2</div>
+    </section>
 
-<!-- Stats Bar -->
-<div class="stats">
-    <div class="stats-container">
-        <div>
-            <div class="stat-number">32+</div>
-            <div class="stat-label">Years of Service</div>
+    <section class="catalog-section" id="services">
+      <div class="section">
+        <div class="section-heading">
+          <span class="eyebrow">Services We Offer</span>
+          <h2>Security Services & Solutions</h2>
+          <p>Catalog services and descriptions arranged for easy browsing. The photos below are extracted from the supplied 2026 catalog.</p>
         </div>
-        <div>
-            <div class="stat-number">500+</div>
-            <div class="stat-label">Professionals</div>
-        </div>
-        <div>
-            <div class="stat-number">2,421</div>
-            <div class="stat-label">Satisfied Clients</div>
-        </div>
-        <div>
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Always Available</div>
-        </div>
-    </div>
-</div>
 
-<!-- About Us -->
-<section id="about">
-    <h2 class="section-title">About Security Consulting Group</h2>
-    <p class="section-subtitle">Elite security services — protecting what matters most since 1992</p>
-    
-    <div class="about-content">
-        <div>
-            <img src="images/page_04-security_consulting_team.jpg" alt="Our Security Consulting Team" class="about-image">
-            <h3>Who We Are</h3>
-            <p>Security Consulting Group is an elite security group specialized in identifying potential risks for high-profile clients. Our company provides security and patrol officers qualified for day-to-day protection offerings.</p>
-            <p>We provide high-quality, professional security services to all clients, employees, patrons, and community members who visit or live at the sites we guard. We embrace our role of providing public safety along with protecting our clients' assets.</p>
-        </div>
-        <div>
-            <img src="images/page_11-uniformed_officers_on_site.jpg" alt="Security Officers on Site" class="about-image">
-            <h3>Our Mission</h3>
-            <p>It is our goal to develop trusted business partnerships with our clients by providing technology-enabled solutions. With years of experience in providing security systems and guard services, we ensure to fulfill our responsibility to protect our clients from immediate, present, and future dangers.</p>
-            <p><strong>Security Consulting Group — Ready to Serve You.</strong></p>
-        </div>
-    </div>
-</section>
-
-<!-- Services -->
-<section id="services" style="background: var(--light);">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">Comprehensive security solutions — tailored to your unique needs</p>
-    
-    <div class="services-grid">
-        <!-- Security Consulting -->
-        <div class="service-card">
-            <img src="images/page_04-security_consulting_team.jpg" alt="Security Consulting" class="service-image">
-            <div class="service-content">
-                <h3>📋 Security Consulting</h3>
-                <p>Planning and installing an updated security system doesn't have to be complicated. With decades of experience designing security systems across California, we assess your personal security needs and propose effective, practical solutions.</p>
-                <p>From upgrading existing systems to designing new ones from scratch — our engineers guide you every step of the way.</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="images/page_04_security_consulting_team.jpeg" alt="Security consulting team">
+            <div class="service-copy">
+              <h3>Security Consulting Services</h3>
+              <p>Planning and installing an updated security system is not always easy. SCG assesses personal security needs and proposes solutions that are effective and practical.</p>
+              <p>The catalog describes thorough designs and step-by-step consulting for security systems, whether upgrading an existing system or designing a new one from scratch.</p>
             </div>
-        </div>
+          </article>
 
-        <!-- Camera Systems -->
-        <div class="service-card">
-            <img src="images/page_05-security_camera_installation.jpg" alt="Camera Systems Installation" class="service-image">
-            <div class="service-content">
-                <h3>📷 Camera Systems & Installation</h3>
-                <p>Modern camera systems let you monitor who enters and exits your property while deterring criminal activity. We offer state-of-the-art systems and professional installation for projects of all sizes.</p>
-                <ul class="benefits-list">
-                    <li>Protect property and valuables</li>
-                    <li>Deter criminal activity</li>
-                    <li>Remote viewing from anywhere</li>
-                    <li>Lower insurance premiums</li>
-                </ul>
+          <article class="service-card">
+            <img src="images/page_05_security_camera_installation.jpeg" alt="Security camera installation">
+            <div class="service-copy">
+              <h3>Camera Systems & Installation</h3>
+              <p>Modern camera systems help monitor who enters and leaves a building, deter break-ins, and gather evidence if a crime occurs. SCG offers camera systems and installation for projects of different sizes.</p>
+              <ul><li>Protect property and valuables</li><li>Deter criminal activity</li><li>Allow remote viewing and access</li><li>May lower insurance costs</li><li>Reduce worry and stress</li></ul>
             </div>
-        </div>
+          </article>
 
-        <!-- Alarm Systems -->
-        <div class="service-card">
-            <img src="images/page_06-alarm_system_installation.jpg" alt="Alarm Systems" class="service-image">
-            <div class="service-content">
-                <h3>🔔 Alarm Systems & Installation</h3>
-                <p>An up-to-date alarm system is your first line of defense. Modern systems deter burglars and alert authorities instantly. We design and install custom solutions using licensed professional crews.</p>
-                <ul class="benefits-list">
-                    <li>24/7 monitoring & alerts</li>
-                    <li>Remote access & control</li>
-                    <li>Fire & gas detection</li>
-                    <li>Custom design for your property</li>
-                </ul>
+          <article class="service-card">
+            <img src="images/page_06_alarm_system.jpeg" alt="Alarm system keypad">
+            <div class="service-copy">
+              <h3>Alarm Systems & Installation</h3>
+              <p>An up-to-date alarm system is described as a first line of defense for family, property, and valuables. Modern systems can deter burglars and alert authorities when emergency action is needed.</p>
+              <p>SCG sells and installs custom alarm systems using professional installation crews, with designs based on the client's security and budget needs.</p>
+              <ul><li>Protect property and valuables</li><li>Deter criminal activity</li><li>Remote access</li><li>Gas or fire alerts</li><li>Reduce worry and stress</li></ul>
             </div>
-        </div>
+          </article>
 
-        <!-- Fire Watch & Safety -->
-        <div class="service-card">
-            <img src="images/page_07-fire_watch_safety.jpg" alt="Fire Watch & Safety Services" class="service-image">
-            <div class="service-content">
-                <h3>🔥 Fire Watch & Safety Services</h3>
-                <p>Certified safety services including fire prevention, first aid, evacuation assistance, and emergency planning. Our officers perform a variety of additional safety services:</p>
-                <ul class="benefits-list">
-                    <li>Fire prevention & firefighting training</li>
-                    <li>Evacuation assistance & exercises</li>
-                    <li>Workplace & traffic safety</li>
-                    <li>Emergency planning & crisis management</li>
-                </ul>
+          <article class="service-card">
+            <img src="images/page_07_fire_watch_safety.jpeg" alt="Fire watch and safety service">
+            <div class="service-copy">
+              <h3>Fire Watch & Safety Services</h3>
+              <p>SCG describes certified safety services including fire prevention, first aid, evacuation assistance, and emergency planning. On-site Fire Watch officers also perform additional safety services.</p>
+              <ul><li>Evacuation assistance</li><li>Workplace and traffic safety</li><li>School safety</li><li>Safety consulting and compliance audits</li><li>Firefighting training</li><li>Emergency planning and crisis management</li><li>Evacuation exercises</li></ul>
             </div>
-        </div>
+          </article>
 
-        <!-- Marked Vehicle Patrol -->
-        <div class="service-card">
-            <img src="images/page_08-marked_vehicle_patrol.jpg" alt="Marked Vehicle Patrol" class="service-image">
-            <div class="service-content">
-                <h3>🚓 Marked Vehicle Patrol</h3>
-                <p>With over 24 years of experience, we're one of California's largest security patrol companies. Our 24/7 dispatch provides immediate response — average response time 30 minutes or less.</p>
-                <p>Patrol service is a cost-effective crime deterrent that protects your property against vandalism and theft. Each client receives personalized attention and qualified officers.</p>
+          <article class="service-card">
+            <img src="images/page_08_marked_vehicle_patrol.jpeg" alt="Marked security vehicle patrol">
+            <div class="service-copy">
+              <h3>Marked Vehicle Patrol</h3>
+              <p>SCG describes vehicle patrol as a cost-effective deterrent against vandalism and theft. The catalog states that 24-hour dispatch is available and gives an average vehicle-patrol response time of 30 minutes or less.</p>
+              <p>Patrol officers monitor premises, identify hazards and suspicious activity, and provide personalized attention to each property.</p>
             </div>
-        </div
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_09_virtual_security_monitoring.jpeg" alt="Virtual security monitoring operator">
+            <div class="service-copy">
+              <h3>Virtual Security</h3>
+              <p>Virtual security combines smart cameras, people-detecting analytics, and a remote video monitoring center to help identify emerging threats and reduce reliance on conventional on-site guards.</p>
+              <ul><li>Technology-enabled monitoring</li><li>Multiple areas monitored simultaneously, 24/7</li><li>Response to criminal activity</li><li>Professionally trained monitoring personnel</li><li>Reduced cost compared with a full-time security detail</li></ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_11_uniformed_security_officer.jpeg" alt="Uniformed security officer">
+            <div class="service-copy">
+              <h3>On-Site Uniformed Security Officer</h3>
+              <p>Uniformed security officers trained in crisis management can provide an immediate sense of safety for properties of different sizes. SCG describes guard services for businesses and individuals throughout California.</p>
+              <p>Services are described for retail properties, religious institutions, hospitals, schools, shopping centers, apartments, childcare facilities, construction sites, healthcare centers, gated communities, hotels, and private residences.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_13_armed_security_officers.jpeg" alt="Armed security officers">
+            <div class="service-copy">
+              <h3>Armed Security Services</h3>
+              <p>The catalog describes armed and unarmed security officers as a visible deterrent and a response resource at client locations. Officers may respond to emergency calls, unusual situations, and site-specific patrol assignments.</p>
+              <p>Tasks include checking for unsafe conditions, hazards, unlocked doors, security violations, and unauthorized entry, as well as monitoring entrances, exits, people, vehicles, and parking areas.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_14_security_guard_tasks.jpeg" alt="Security guard checking a property">
+            <div class="service-copy">
+              <h3>Security Guard Tasks</h3>
+              <p>Security personnel focus on site-specific goals and procedures, including:</p>
+              <ul><li>Checking credentials for restricted areas</li><li>Checking for contraband on business premises</li><li>Monitoring suspicious activity that could lead to theft or burglary</li><li>Monitoring and securing business areas after office hours</li><li>Opening and closing the business each workday</li></ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_15_construction_site_security.jpeg" alt="Security at a construction site">
+            <div class="service-copy">
+              <h3>Construction Site Security</h3>
+              <p>Construction sites can face vandalism, graffiti, theft, production delays, and financial loss. SCG describes customized plans and professional guards to help prevent unauthorized visitors from entering a site.</p>
+              <p>Guards patrol the site, while supervisors visit each shift to check that officers are performing their duties to the client's expectations.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_17_business_park_security.jpeg" alt="Business park security officers">
+            <div class="service-copy">
+              <h3>Business Park Security</h3>
+              <p>Business park security helps protect tenants, buildings, assets, and the people who work at the property. The catalog highlights maintaining a consistent security presence during business hours and additional overnight measures.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_18_shopping_center_security.jpeg" alt="Shopping center security officer">
+            <div class="service-copy">
+              <h3>Shopping Center Security</h3>
+              <p>SCG describes tailored security tactics for shopping centers, malls, and retail stores to help minimize loitering, theft, vandalism, trespassing, and other unwanted activity.</p>
+              <p>The catalog emphasizes experienced, licensed officers and solutions designed around the requirements of retail establishments.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_19_healthcare_facilities_security.jpeg" alt="Healthcare facility security officer">
+            <div class="service-copy">
+              <h3>Healthcare Facilities Security</h3>
+              <p>Healthcare facilities have patients, medical professionals, suppliers, visitors, and service providers moving through the site at all hours. SCG describes security support designed for these open, active environments.</p>
+              <p>Professionally trained guards help prevent and respond to unwanted disputes and situations between different parties.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_20_hotel_motel_security.jpeg" alt="Hotel and motel security officer">
+            <div class="service-copy">
+              <h3>Hotel / Motel Security</h3>
+              <p>SCG describes hotel and motel security guards as focused on the safety of guests and customers while representing the property with professional and reliable service.</p>
+              <p>The catalog notes that solutions are customized to each client's site-specific safety and security purposes.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_21_apartment_hoa_security.jpeg" alt="Apartment and HOA security">
+            <div class="service-copy">
+              <h3>Apartments / HOA Security Services</h3>
+              <p>Apartment and condominium properties can be targets for theft, trespassing, loitering, vandalism, and burglary. SCG describes security services intended to help protect residents, tenants, owners, and property.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_22_apartment_hoa_security_detail.jpeg" alt="Apartment community security officers">
+            <div class="service-copy">
+              <h3>Apartments / HOA — Response & Patrol</h3>
+              <p>The catalog describes guards trained to respond to emergencies and coordinate with local authorities when needed. SCG lists alarm response, on-site security guards, and vehicle patrols as available solutions.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_23_educational_institutional_security.jpeg" alt="Educational campus security">
+            <div class="service-copy">
+              <h3>Educational & Institutional Security</h3>
+              <p>SCG describes campus security with trained security experts, risk consulting, and technology solutions to help create a safe environment for students, faculty, and staff.</p>
+              <ul><li>Incident management and safety patrols</li><li>Parking enforcement and student escorts</li><li>Visitor access control</li><li>Lock-out assistance</li><li>Program design and management support</li></ul>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_25_industrial_security.jpeg" alt="Industrial security officers">
+            <div class="service-copy">
+              <h3>Industrial Security</h3>
+              <p>SCG describes tailored industrial security services based on facility needs, with teams trained to recognize safety hazards and respond appropriately.</p>
+              <p>Additional services listed in the catalog include extinguisher checks, visitor reception and badging, employee credentialing, visitor escorts, job safety analyses, emergency preparation, loss prevention, mail and package distribution, and lighting inspections.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="images/page_26_security_patrol_vehicle.jpeg" alt="Security patrol vehicle">
+            <div class="service-copy">
+              <h3>Security Patrol & Site Support</h3>
+              <p>SCG's catalog also describes site access control, additional personnel when needed, scheduled or random patrol dispatch, premises supervision, inspections, alarm response, and timely reporting.</p>
+            </div>
+          </article>
+        </div>
+        <div class="page-number">Catalog pages 4–26</div>
+      </div>
+    </section>
+
+    <section class="section industries" id="industries">
+      <div class="section-heading">
+        <span class="eyebrow">Who We Serve</span>
+        <h2>Industries & Properties</h2>
+        <p>Examples of the settings identified throughout the SCG catalog.</p>
+      </div>
+      <div class="industry-grid">
+        <div class="industry">Retail Properties</div><div class="industry">Construction Sites</div>
+        <div class="industry">Hospitals & Healthcare</div><div class="industry">Educational Institutes</div>
+        <div class="industry">Shopping Centers</div><div class="industry">Hotels & Motels</div>
+        <div class="industry">Apartments & Condominiums</div><div class="industry">Business Parks</div>
+        <div class="industry">Industrial Facilities</div><div class="industry">Religious Institutions</div>
+        <div class="industry">Childcare Facilities</div><div class="industry">Private Residences</div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="section">
+        <div class="section-heading">
+          <span class="eyebrow">SCG’s Distinction</span>
+          <h2>Reliable Security Solutions</h2>
+          <p>The catalog presents SCG around professional protection, trained officers, tailored solutions, and emergency response.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item"><h3>Professional Officers</h3><p>The catalog describes officers with training and relevant certifications for their assignments.</p></div>
+          <div class="why-item"><h3>Tailored Solutions</h3><p>Security requirements are assessed and solutions are shaped around each site and client.</p></div>
+          <div class="why-item"><h3>Emergency Response</h3><p>Security personnel are described as responding promptly to emergencies and unusual situations.</p></div>
+          <div class="why-item"><h3>Technology Enabled</h3><p>SCG combines security personnel with systems, patrols, cameras, and monitoring solutions.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section">
+        <div class="section-heading">
+          <span class="eyebrow">Contact Us</span>
+          <h2>Security Consulting Group</h2>
+          <p>Reliable Security Solutions</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3>Get in Touch</h3>
+            <div class="contact-line"><strong>Phone</strong><a href="tel:+18008065422">+1 (800) 806-5422</a></div>
+            <div class="contact-line"><strong>Email</strong><a href="mailto:info@securityscg.com">info@securityscg.com</a></div>
+            <div class="contact-line"><strong>Website</strong><a href="https://www.securityscg.com" target="_blank" rel="noopener">www.securityscg.com</a></div>
+            <div class="contact-line"><strong>Address</strong>8928 Fullbright Ave, Chatsworth, CA 91311</div>
+          </div>
+          <div class="contact-panel">
+            <h3>Business Hours</h3>
+            <p>Monday to Sunday: <strong>24/7 Operations</strong></p>
+            <p style="margin-top:16px;color:#666">The contact information and business hours above are reproduced from the supplied SCG Services Catalog 2026.</p>
+            <a class="button" style="margin-top:20px" href="mailto:info@securityscg.com?subject=Security%20Services%20Inquiry">Email SCG</a>
+          </div>
+        </div>
+        <div class="page-number">Catalog page 27</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>SECURITY CONSULTING GROUP</strong><br>
+    Reliable Security Solutions · PPO#119767<br>
+    © <span id="year"></span> Security Consulting Group
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
