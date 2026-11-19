@@ -1,316 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCG | Contact</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    :root {
-      --primary: #1a365d;
-      --secondary: #c9a227;
-      --accent: #2c5282;
-      --light: #fef9e7;
-      --dark: #1f2937;
-      --text: #374151;
-    }
-    body {
-      line-height: 1.6;
-      color: var(--text);
-      background: linear-gradient(135deg, #fff9e6 0%, #fef3c7 50%, #fde68a 100%);
-      min-height: 100vh;
-    }
-    nav {
-      background: rgba(26, 54, 93, 0.95);
-      padding: 1rem 5%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo img {
-      height: 50px;
-      width: auto;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--secondary);
-    }
-    section {
-      padding: 4rem 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2.2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-    .section-subtitle {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      color: #6b7280;
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.12);
-      border-top: 4px solid var(--secondary);
-    }
-    .card h3 {
-      color: var(--primary);
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-    }
-    .contact-item {
-      margin-bottom: 1.2rem;
-    }
-    .contact-item strong {
-      display: block;
-      color: var(--dark);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.3rem;
-    }
-    .contact-item a,
-    .contact-item span {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 1rem;
-    }
-    .contact-item a:hover {
-      color: var(--secondary);
-    }
-    /* Form Styles */
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      border: 2px solid #e5e7eb;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: border-color 0.3s;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--secondary);
-    }
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, #c9a227 0%, #d4b346 100%);
-      color: var(--primary);
-      padding: 0.9rem 2.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      font-size: 1rem;
-    }
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(201, 162, 39, 0.4);
-    }
-    .success-message {
-      display: none;
-      background: #d1fae5;
-      color: #065f46;
-      padding: 1rem;
-      border-radius: 6px;
-      margin-top: 1rem;
-      text-align: center;
-    }
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 2rem 5%;
-      margin-top: 3rem;
-    }
-    @media (max-width: 768px) {
-      .nav-links { gap: 1rem; font-size: 0.9rem; }
-      .section-title { font-size: 1.8rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Security Consulting Group</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff8dc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0a2342;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 5%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0a2342;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 2.5rem;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 3px solid #d4af37;
+        }
+
+        .card h2 {
+            color: #0a2342;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #d4af37;
+            color: #0a2342;
+            border: none;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            background-color: #c99b2c;
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #0a2342;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .info-item a {
+            color: #0a2342;
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .hours {
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a class="logo" href="index.html">
-        <img src="images/scg_logo_wordmark.png" alt="SCG Logo">
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="industries.html">Industries</a></li>
-        <li><a href="why-scg.html">Why SCG</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <section>
-    <h2 class="section-title">CONTACT US</h2>
-    <p class="section-subtitle">Ready to secure your property? Fill out the form below — we'll get back to you soon!</p>
-    
-    <div class="contact-grid">
-      <div class="card">
-        <h3>SEND US A MESSAGE</h3>
-        
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required placeholder="John Doe">
-          </div>
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" name="email" required placeholder="john@example.com">
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
-          </div>
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" required placeholder="Tell us about your security needs..."></textarea>
-          </div>
-          <button type="submit" class="cta-button">SEND MESSAGE</button>
-          <div class="success-message" id="successMessage">
-            ✅ Message sent successfully! We'll get back to you soon.
-          </div>
-        </form>
-      </div>
-      
-      <div>
-        <div class="card" style="margin-bottom: 2rem;">
-          <h3>GET IN TOUCH</h3>
-          <div class="contact-item">
-            <strong>PHONE</strong>
-            <a href="tel:+18008065422">+1 (800) 806-5422</a>
-          </div>
-          <div class="contact-item">
-            <strong>EMAIL:</strong>
-<a href="mailto:nancy@securityscg.net">nancy@securityscg.net</a>
-          </div>
-          <div class="contact-item">
-            <strong>WEBSITE</strong>
-            <a href="https://securityscg.com" target="_blank">www.securityscg.com</a>
-          </div>
-          <div class="contact-item">
-            <strong>ADDRESS</strong>
-            <span>8928 Fullbright Ave,<br>Chatsworth, CA 91311</span>
-          </div>
+    <header>
+        <div class="logo">SECURITY CONSULTING GROUP</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="industries.html">Industries</a>
+            <a href="why-scg.html">Why SCG</a>
+            <a href="contact.html" style="color: #d4af37;">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>CONTACT US</h1>
+        <p class="subtitle">Ready to secure your property? Fill out the form below — we'll get back to you soon!</p>
+
+        <div class="content-wrapper">
+            <!-- ✅ CONTACT FORM with Formspree -->
+            <div class="card">
+                <h2>Send Us a Message</h2>
+
+                <form action="https://formspree.io/f/xoedlykn" method="POST">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- ✅ GET IN TOUCH INFO -->
+            <div>
+                <div class="card">
+                    <h2>Get In Touch</h2>
+
+                    <div class="info-item">
+                        <strong>Phone:</strong>
+                        +1 (800) 806-5422
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:badmonki.dev@gmail.com">badmonki.dev@gmail.com</a>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Website:</strong>
+                        <a href="https://www.securityscg.com" target="_blank">www.securityscg.com</a>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>Address:</strong>
+                        8928 Fullbright Ave,<br>
+                        Chatsworth, CA 91311
+                    </div>
+                </div>
+
+                <div class="card hours">
+                    <h2>Business Hours</h2>
+                    <p><strong>Monday — Sunday</strong></p>
+                    <p>24 Hours a Day, 7 Days a Week</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Our team is always available to assist with your security needs.</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="card">
-          <h3>BUSINESS HOURS</h3>
-          <div class="contact-item">
-            <strong>MONDAY — SUNDAY</strong>
-            <span>24 Hours a Day, 7 Days a Week</span>
-          </div>
-          <p style="margin-top: 1rem; color: #6b7280; font-size: 0.95rem;">
-            Our team is always available to assist with your security needs. Reach out anytime — we're here to help.
-          </p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <footer>
-    <strong>SECURITY CONSULTING GROUP</strong><br>
-    Reliable Security Solutions · PPO#119767<br>
-    © <span id="year"></span> Security Consulting Group
-  </footer>
-
-  <script>
-    // Auto-update copyright year
-    document.getElementById("year").textContent = new Date().getFullYear();
-    
-    // Form submit handler
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-    
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form values
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const message = document.getElementById('message').value;
-      
-      // Create mailto link so it actually sends the email
-      const subject = encodeURIComponent(`New Contact from ${name}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Phone: ${phone}\n\n` +
-        `Message:\n${message}`
-      );
-      
-      // Show success message
-      successMessage.style.display = 'block';
-      
-      // Open email client with all the info pre-filled
-      window.location.href = `mailto:info@securityscg.com?subject=${subject}&body=${body}`;
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        form.reset();
-        successMessage.style.display = 'none';
-      }, 3000);
-    });
-  </script>
 </body>
 </html>
