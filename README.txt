@@ -1,18 +1,48 @@
-SECURITY CONSULTING GROUP WEBSITE - REPAIRED PACKAGE
+# Security Consulting Group — Website
 
-Included pages:
-- index.html
-- about.html
-- services.html
-- industries.html
-- why-scg.html (your supplied page content, integrated with the shared design)
-- contact.html (your supplied contact details and business hours, integrated with the shared design)
-- style.css
+## 📦 What's Included
+This package contains the complete repaired Security Consulting Group website:
 
-IMAGE SETUP:
-The actual image files were not included with the HTML uploads. Copy all image files from your original project folder:
-Documents/GitHub/security-consulting-group/images
-into this package's images folder. Keep the filenames unchanged.
+### Pages
+- `index.html` — Home page
+- `about.html` — About Us
+- `services.html` — Our Services
+- `industries.html` — Industries Served
+- `why-scg.html` — Why Choose Us (content integrated)
+- `contact.html` — Contact Information & Business Hours
 
-Then open index.html in your browser or with VS Code Live Server.
-The website pages now share one stylesheet and consistent navigation.
+### Styles & Assets
+- `style.css` — Unified stylesheet (consistent design across all pages)
+- `/images/` — Image folder (see setup instructions below)
+
+---
+
+## 🖼️ Image Setup ⚠️ IMPORTANT
+The image files are not included in this package by default. Please copy your image files into place:
+
+1. Locate your original images folder:
+2. Copy **all image files** from that folder into this project's `images/` folder
+3. Keep the **exact same filenames** — do not rename them
+
+---
+
+## 🚀 How to View / Run Locally
+Choose one of these options:
+- **Option 1:** Double-click `index.html` to open it directly in your web browser
+- **Option 2:** Open the project folder in VS Code → use the **Live Server** extension for best results
+
+---
+
+## 🌐 Live Website & Hosting
+- **Live site:** https://badmonkidev-svg.github.io/security-consulting-group/
+- **Hosting:** GitHub Pages — hosted free by GitHub
+- **Custom domain:** See GitHub Repository Settings → Pages to update domain settings
+- **Enforce HTTPS:** Recommended — keep this checked in Settings for a secure connection
+
+---
+
+## 📝 Notes for New Owner
+- All pages share a single `style.css` file — edit this one file to update styles across the whole site
+- Navigation is consistent across all pages
+- Contact page includes your business hours and contact details — edit `contact.html` anytime to update them
+- To deploy changes: commit and push changes to the `main` branch — GitHub Pages will rebuild automatically
